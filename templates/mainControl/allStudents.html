@@ -7,30 +7,30 @@
 {% if student_list %}
 <table id='allStudents' class='mb-5 mx-auto p-3 table table-striped' style='width: fit-content'>
     <thead>
-    <tr class='text-center px-5 py-2'>
-        <td class='text-center px-5 py-2'>Unique Key</td>
-        <td class='text-center px-5 py-2'>Name</td>
-        <td class='text-center px-5 py-2'>Student ID</td>
-        <td class='text-center px-5 py-2'>Email</td>
-        <td class='text-center px-5 py-2'>Phone</td>
-        <td class='text-center px-5 py-2'>Registration Semester</td>
-        <td class='text-center px-5 py-2'>Date of Birth</td>
+    <tr class='text-center py-2'>
+        <td class='text-center py-2'>Unique Key</td>
+        <td class='text-center py-2'>Name</td>
+        <td class='text-center py-2'>Student ID</td>
+        <td class='text-center py-2'>Email</td>
+        <td class='text-center py-2'>Phone</td>
+        <td class='text-center py-2'>Registration Semester</td>
+        <td class='text-center py-2'>Date of Birth</td>
     </tr>
 </thead>
 <tbody>
     {% for row in student_list %}
     <tr class='text-center px-5 py-2'>
-        <td class='text-center px-5 py-2'>{{ row.id }}</td>
-        <td class='text-center px-5 py-2'>{{ row.name }}</td>
-        <td class='text-center px-5 py-2'>{{ row.student_id }}</td>
-        <td class='text-center px-5 py-2'>{{ row.email }}</td>
+        <td class='text-center py-2'>{{ row.id }}</td>
+        <td class='text-center py-2'>{{ row.name }}</td>
+        <td class='text-center py-2'>{{ row.student_id }}</td>
+        <td class='text-center py-2'>{{ row.email }}</td>
 
         {% for x in student_info %}
 
         {% if x.students_information_id == row.id %}
-        <td class='text-center px-5 py-2'>{{ x.phone }}</td>
-        <td class='text-center px-5 py-2'>{{ x.registration_semester }}-{{ x.registration_year }}</td>
-        <td class='text-center px-5 py-2'>{{ x.date_of_birth }}</td>
+        <td class='text-center py-2'>{{ x.phone }}</td>
+        <td class='text-center py-2'>{{ x.registration_semester }}-{{ x.registration_year }}</td>
+        <td class='text-center py-2'>{{ x.date_of_birth }}</td>
         {% endif %}
 
         {% endfor %}
