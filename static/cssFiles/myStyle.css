@@ -1,0 +1,23 @@
+.myBackground{
+  background-color: rgb(27, 26, 36);
+}
+
+h1 {
+  color: red;
+}
+
+.faIcons{
+  font-size: 54px;
+  display: inline-block;
+  transition: transform .2s;
+}
+
+.faIcons:hover{
+  transform: scale(1.2);
+}
+
+/* table, tr, td{
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+} */

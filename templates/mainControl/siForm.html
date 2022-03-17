@@ -1,0 +1,16 @@
+{% extends 'mainControl/base.html' %}
+
+{% block body_block %}
+
+<div class = "mt-5">
+    <h1> Add Information to a existing student </h1>
+</div>
+
+<form class="my-5" action="" method="POST">
+    {{ form_info.as_p }}
+    {% csrf_token %}
+
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+{% endblock body_block %}

@@ -1,0 +1,26 @@
+{% extends 'mainControl/base.html' %}
+{% block body_block %}
+<div class = 'container p-2 my-5'>
+    <h1 class='display-4 text-center text-info py-2 my-2'>{{ student.name }}'s informations</h1>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">unique key = {{ student.id }}</li>
+        <li class="list-group-item">name = {{ student.name }}</li>
+        <li class="list-group-item">student id = {{ student.student_id }}</li>
+        <li class="list-group-item">email = {{ student.email }}</li>
+        {% comment %} <li class="list-group-item">phone = {{ student_info.phone }}</li>
+        <li class="list-group-item">registration semester = {{ student_info.registration_semester }}-{{ student_info.registration_year }}</li>
+        <li class="list-group-item">date of birth = {{ student_info.date_of_birth }}</li> {% endcomment %}
+        {% if student.student_info.all %}
+        {% for x in student.student_info.all %}
+        <li class="list-group-item">phone = {{ x.phone }}</li>
+        <li class="list-group-item">registration semester = {{ x.registration_semester }}-{{ x.registration_year }}</li>
+        <li class="list-group-item">date of birth = {{ x.date_of_birth }}</li>
+        {% endfor %}
+        {% else %}
+        <li class="list-group-item">phone = ---</li>
+        <li class="list-group-item">registration semester = ---</li>
+        <li class="list-group-item">date of birth = ---</li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock body_block %}

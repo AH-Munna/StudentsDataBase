@@ -1,0 +1,23 @@
+{% extends 'mainControl/base.html' %}
+{% block body_block %}
+<table class="table py-2 my-5 table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Student ID</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for student in studentList %}
+        <tr>
+          <th scope="row">{{student.id}}</th>
+          <td><a href="{% url 'mainApp:student-info2' pk=student.pk %}" class='text-decoration-none'>{{student.name}}</a></td>
+          <td>{{student.student_id}}</td>
+          <td>{{student.email}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock body_block %}
